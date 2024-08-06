@@ -1,8 +1,9 @@
 source 'https://rubygems.org'
-
-gem 'rspec'
 gem 'pry'
-gem 'sinatra'
+gem 'rspec'
 gem 'rubocop', '~> 1.64'
+gem 'sinatra'
 ruby '3.3.3'
-gem "rackup", "~> 2.1"
+gem 'rack', '~> 3.1'
+gem 'rackup', '~> 2.1'
+gem 'shotgun', '~> 0.9.2'
