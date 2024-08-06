@@ -18,10 +18,8 @@ class Gossip
 
   def self.all
     all_gossips = []
-    file_path = File.expand_path('../db/gossip.csv', __dir__)
-    CSV.foreach(file_path, headers: true) do |ligne|
-      gossip_provisoire = Gossip.new(ligne['author'], ligne['content'])
-      all_gossips << gossip_provisoire
+    CSV.read('./db/gossip.csv').each do |csv_line|
+      all_gossips << Gossip.new(csv_line[0], csv_line[1])
     end
     all_gossips
   end
