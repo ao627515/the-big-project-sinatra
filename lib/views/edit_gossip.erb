@@ -1,0 +1,18 @@
+<!-- views/edit_gossip.erb -->
+<html>
+<head>
+  <title>Éditer le Gossip</title>
+</head>
+<body>
+  <h1>Éditer le Gossip</h1>
+  <form action="/gossips/<%= id %>/update/" method="POST">
+    <label for="author">Auteur:</label>
+    <input type="text" id="author" name="gossip_author" value="<%= gossip.author %>" required>
+    <br>
+    <label for="content">Contenu:</label>
+    <textarea id="content" name="gossip_content" required><%= gossip.content %></textarea>
+    <br>
+    <input type="submit" value="Mettre à jour">
+  </form>
+</body>
+</html>

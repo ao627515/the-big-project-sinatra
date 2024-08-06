@@ -23,4 +23,17 @@ class Gossip
     end
     all_gossips
   end
+
+  def self.find(id)
+    all[id.to_i]
+  end
+
+  def update(author, content)
+    file_path = File.expand_path('../db/gossip.csv', __dir__)
+    gossips = CSV.read(file_path)
+    gossips[@id.to_i] = [author, content]
+    CSV.open(file_path, 'w') do |csv|
+      gossips.each { |row| csv << row }
+    end
+  end
 end
